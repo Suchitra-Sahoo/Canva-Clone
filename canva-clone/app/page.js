@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { UserButton } from "@stackframe/stack";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <h2>Hello guys</h2>
       <Button>Click</Button>
+      <UserButton/>
     </div>
     </>
   );
