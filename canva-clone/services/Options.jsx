@@ -1,4 +1,4 @@
-import { Folder, Home, LayoutDashboardIcon, WalletCardsIcon } from "lucide-react"
+import { Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Settings, ShapesIcon, Sparkle, WalletCardsIcon } from "lucide-react"
 
 export const WorkspaceMenu=[
     {
@@ -89,4 +89,38 @@ export const canvasSizeOptions=[
     height:720,
     icon:'/pinterest.png'
    },
-]
+];
+
+export const sideBarMenu = [
+    {
+      name: 'Templates',
+      icon: LayoutTemplate,
+      desc: 'Browse and select from a variety of pre-designed templates.'
+    },
+    {
+      name: 'Elements',
+      icon: ShapesIcon,
+      desc: 'Add shapes, lines, icons, and other design elements.'
+    },
+    {
+      name: 'Images',
+      icon: Image,
+      desc: 'Upload or choose images to enhance your design.'
+    },
+    {
+      name: 'Text',
+      icon: LayoutTemplateIcon,
+      desc: 'Insert and style text blocks for titles, subtitles, or body.'
+    },
+    {
+      name: 'AI',
+      icon: Sparkle,
+      desc: 'Use AI tools for smart suggestions and content generation.'
+    },
+    {
+      name: 'Settings',
+      icon: Settings,
+      desc: 'Adjust design settings like dimensions, background, and more.'
+    }
+  ];
+  

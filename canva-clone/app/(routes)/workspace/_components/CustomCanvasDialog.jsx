@@ -15,6 +15,7 @@ import { useMutation } from 'convex/react'
 import { Loader2Icon } from 'lucide-react'
 import { api } from '@/convex/_generated/api'
 import { toast } from 'sonner' // assuming you're using 'sonner' for toast
+import { useRouter } from 'next/router'
 
 function CustomCanvasDialog({ children }) {
   const [name, setName] = useState('')
@@ -24,6 +25,7 @@ function CustomCanvasDialog({ children }) {
 
   const { userDetail } = useContext(UserDetailContext)
   const createDesignRecord = useMutation(api.designs.CreateNewDesign)
+
 
   const onCreate = async () => {
     toast('Creating design...')
@@ -44,6 +46,7 @@ function CustomCanvasDialog({ children }) {
     } finally {
       setLoading(false)
     }
+   
   }
 
   return (
