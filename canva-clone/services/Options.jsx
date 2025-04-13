@@ -1,4 +1,6 @@
-import { Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Settings, ShapesIcon, Sparkle, WalletCardsIcon } from "lucide-react"
+import { Folder,Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Settings, ShapesIcon, Sparkle, WalletCardsIcon } from "lucide-react"
+import { Rocket } from "lucide-react";
+import BackgroundSetting from "./Components/BackgroundSetting";
 
 export const WorkspaceMenu=[
     {
@@ -116,6 +118,12 @@ export const sideBarMenu = [
       name: 'AI',
       icon: Sparkle,
       desc: 'Use AI tools for smart suggestions and content generation.'
+    },
+    {
+      name: ' Background',
+      icon: Rocket,
+      desc: 'Add background colors and gradients',
+      component:<BackgroundSetting />
     },
     {
       name: 'Settings',
