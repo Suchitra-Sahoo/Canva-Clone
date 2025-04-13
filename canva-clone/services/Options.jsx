@@ -2,6 +2,8 @@ import { Folder,Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplate
 import { Rocket } from "lucide-react";
 import BackgroundSetting from "./Components/BackgroundSetting";
 import AddImageSetting from "./Components/AddImageSetting";
+import Shapes from "./Sharable/Shapes";
+import Elements from "./Components/Elements";
 
 export const WorkspaceMenu=[
     {
@@ -103,7 +105,8 @@ export const sideBarMenu = [
     {
       name: 'Elements',
       icon: ShapesIcon,
-      desc: 'Add shapes, lines, icons, and other design elements.'
+      desc: 'Add shapes, lines, icons, and other design elements.',
+      component:<Elements />
     },
     {
       name: 'Images',
@@ -133,4 +136,27 @@ export const sideBarMenu = [
       desc: 'Adjust design settings like dimensions, background, and more.'
     }
   ];
+
+  export const ShapeList=[
+    {
+      name:'Circle',
+      icon:'/circle.png'
+    },
+    {
+      name:'Triangle',
+      icon:'/triangle.png'
+    },
+    {
+      name:'Square',
+      icon:'/square.png'
+    },
+    {
+      name:'Rectangle',
+      icon:'/rectangle.png'
+    },
+    {
+      name:'Line',
+      icon:'/Line.png'
+    },
+  ]
   
