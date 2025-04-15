@@ -1,9 +1,15 @@
-import { Folder,Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Settings, ShapesIcon, Sparkle, WalletCardsIcon } from "lucide-react"
+import { Blend, Folder,Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, WalletCardsIcon } from "lucide-react"
 import { Rocket } from "lucide-react";
 import BackgroundSetting from "./Components/BackgroundSetting";
 import AddImageSetting from "./Components/AddImageSetting";
 import Shapes from "./Sharable/Shapes";
 import Elements from "./Components/Elements";
+import FillColor from "./Sharable/FillColor";
+import BorderColor from "./Sharable/BorderColor";
+import BorderWidth from "./Sharable/BorderWidth";
+import Opacity from "./Sharable/Opacity";
+import BorderRadius from "./Sharable/BorderRadius";
+import TrashButton from "./Sharable/TrashButton";
 
 export const WorkspaceMenu=[
     {
@@ -158,5 +164,38 @@ export const sideBarMenu = [
       name:'Line',
       icon:'/Line.png'
     },
+  ];
+
+  export const shapesSettingList=[
+    {
+      name:'Fill',
+      icon:Palette,
+      component:<FillColor />
+    },
+    {
+      name:'Stroke Color',
+      icon:Square,
+      component:<BorderColor />
+    },
+    {
+      name:'Stroke Width',
+      icon:Minus,
+      component:<BorderWidth />
+    },
+    {
+      name:'Opacity',
+      icon:Blend,
+      component:<Opacity />
+    },
+    {
+      name:'Rounded Corner',
+      icon:SquareRoundCorner,
+      component:<BorderRadius />
+    },
+    {
+      name:'Delete',
+      icon:Trash,
+      component:<TrashButton />
+    }
   ]
   

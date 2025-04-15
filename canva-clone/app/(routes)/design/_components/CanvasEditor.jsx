@@ -2,6 +2,7 @@
 import { Canvas } from 'fabric';
 import React, { useEffect, useRef, useState } from 'react';
 import { useCanvasHook } from '@/context/CanvasContext';
+import TopNavbar from '@/services/Components/TopNavbar';
 
 function CanvasEditor({ DesignInfo }) {
   const canvasRef = useRef(); // Reference to the <canvas> element
@@ -59,8 +60,11 @@ function CanvasEditor({ DesignInfo }) {
   }, [canvas]);
 
   return (
-    <div className="bg-secondary w-full h-screen flex items-center justify-center flex-col">
+    <div className='bg-secondary w-full h-screen'>
+       <TopNavbar />
+    <div className="mt-10 flex items-center justify-center flex-col">
       <canvas id="canvas" ref={canvasRef} />
+    </div>
     </div>
   );
 }
