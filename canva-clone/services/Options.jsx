@@ -10,6 +10,7 @@ import BorderWidth from "./Sharable/BorderWidth";
 import Opacity from "./Sharable/Opacity";
 import BorderRadius from "./Sharable/BorderRadius";
 import TrashButton from "./Sharable/TrashButton";
+import AITransformSetting from "./Components/AITransformSetting";
 
 export const WorkspaceMenu=[
     {
@@ -128,7 +129,8 @@ export const sideBarMenu = [
     {
       name: 'AI',
       icon: Sparkle,
-      desc: 'Use AI tools for smart suggestions and content generation.'
+      desc: 'Use AI tools for smart suggestions and content generation.',
+      component:<AITransformSetting />
     },
     {
       name: ' Background',
@@ -197,5 +199,69 @@ export const sideBarMenu = [
       icon:Trash,
       component:<TrashButton />
     }
+  ];
+
+  export const AITransformationSettings=[
+    {
+      name:'Background Remove',
+      command:'e-bgremove',
+      image:'/remove-bg.jpg',
+
+    }, 
+    {
+      name:'Change Background',
+      command:'e-changebg-prompt-snow road',
+      image:'/change-bg.jpg',
+      input:true
+
+    },
+    {
+      name:'Generative Fill',
+      command:'bg-genfill,w-1000,h-960,cm-pad_resize',
+      image:'/generative-fill.jpg',
+
+    },
+    {
+      name:'AI Drop Shadow',
+      command:'e-dropshadow',
+      image:'/shadow.jpg',
+
+    },
+    {
+      name:'Upsacle',
+      command:'e-upscale',
+      image:'/upscale.jpg',
+
+    },
+    {
+      name:'Smart Crop',
+      command:'fo-auto',
+      image:'/smartcrop.jpg',
+
+    },
+    {
+      name:'contrast',
+      command:'e-contrast',
+      image:'/e-contrast.jpg',
+
+    },
+    {
+      name:'Grayscale',
+      command:'e-grayscale',
+      image:'/e-grayscale.jpg',
+
+    },
+    {
+      name:'Blur',
+      command:'bl-10',
+      image:'/e-blur.jpg',
+
+    },
+    {
+      name:'Flip',
+      command:'fl-h',
+      image:'/e-flip.png',
+
+    },
   ]
   
