@@ -11,6 +11,7 @@ import Opacity from "./Sharable/Opacity";
 import BorderRadius from "./Sharable/BorderRadius";
 import TrashButton from "./Sharable/TrashButton";
 import AITransformSetting from "./Components/AITransformSetting";
+import TextSettings from "./Components/TextSettings";
 
 export const WorkspaceMenu=[
     {
@@ -124,7 +125,8 @@ export const sideBarMenu = [
     {
       name: 'Text',
       icon: LayoutTemplateIcon,
-      desc: 'Insert and style text blocks for titles, subtitles, or body.'
+      desc: 'Add Text and Heading',
+      component:<TextSettings />
     },
     {
       name: 'AI',

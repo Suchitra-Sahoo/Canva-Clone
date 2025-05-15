@@ -44,14 +44,17 @@ function CanvasEditor({ DesignInfo }) {
   // Listen for delete/backspace key to remove active object
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if ((event.key === 'Delete' || event.key === 'Backspace') && canvas) {
+      if (event.key === 'Backspace' || event.key === 'Delete') {
         const activeObject = canvas.getActiveObject();
-        if (activeObject) {
+  
+        // Only delete if it's not in text editing mode
+        if (activeObject && !activeObject.isEditing) {
           canvas.remove(activeObject);
           canvas.renderAll();
         }
       }
     };
+  
 
     document.addEventListener('keydown', handleKeyDown);
     return () => {
