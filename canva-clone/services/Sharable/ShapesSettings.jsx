@@ -5,6 +5,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import FontStyles from "./FontStyles";
 
 function ShapesSettings() {
   return (

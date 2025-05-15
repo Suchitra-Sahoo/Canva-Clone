@@ -1,4 +1,4 @@
-import { Blend, Folder,Home, Image, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, WalletCardsIcon } from "lucide-react"
+import { Blend, BookType, Folder,Home, Image, Italic, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Text, Trash, WalletCardsIcon } from "lucide-react"
 import { Rocket } from "lucide-react";
 import BackgroundSetting from "./Components/BackgroundSetting";
 import AddImageSetting from "./Components/AddImageSetting";
@@ -12,6 +12,8 @@ import BorderRadius from "./Sharable/BorderRadius";
 import TrashButton from "./Sharable/TrashButton";
 import AITransformSetting from "./Components/AITransformSetting";
 import TextSettings from "./Components/TextSettings";
+import FontFamily from "./Sharable/FontFamily";
+import FontStyles from "./Sharable/FontStyles";
 
 export const WorkspaceMenu=[
     {
@@ -197,6 +199,17 @@ export const sideBarMenu = [
       component:<BorderRadius />
     },
     {
+      name:'Font',
+      icon:BookType,
+      component:<FontFamily />
+    },
+    {
+      name: 'Font Style',
+      icon:Text, // or whatever icon you want
+      component: <FontStyles />
+    },
+    
+    {
       name:'Delete',
       icon:Trash,
       component:<TrashButton />
@@ -265,5 +278,33 @@ export const sideBarMenu = [
       image:'/e-flip.png',
 
     },
-  ]
+  ];
+  
+  
+  export const FontFamilyList = [
+    'Arial',
+    'Helvetica',
+    'Times New Roman',
+    'Georgia',
+    'Courier New',
+    'Verdana',
+    'Trebuchet MS',
+    'Impact',
+    'Comic Sans MS',
+    'Lucida Console',
+    'Tahoma',
+    'Palatino Linotype',
+    'Segoe UI',
+    'Roboto',
+    'Open Sans',
+    'Lato',
+    'Montserrat',
+    'Oswald',
+    'Raleway',
+    'Merriweather',
+    'Ubuntu',
+    'Playfair Display',
+    'Nunito',
+    'Poppins',
+  ];
   
