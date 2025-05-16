@@ -30,9 +30,16 @@ function CanvasEditor({ DesignInfo }) {
 
     initCanvas.setZoom(1 / scaleFactor);
 
-    initCanvas.loadFromJSON(DesignInfo.jsonTemplate,()=>{
-      initCanvas?.requestRenderAll();
-    })
+    // ✅ Safely load JSON if available
+    if (DesignInfo?.jsonTemplate) {
+      try {
+        initCanvas.loadFromJSON(DesignInfo.jsonTemplate, () => {
+          initCanvas.requestRenderAll();
+        });
+      } catch (error) {
+        console.error('Failed to load canvas from JSON:', error);
+      }
+    }
 
     // Store canvas in local state and global context
     setCanvas(initCanvas);
@@ -48,8 +55,8 @@ function CanvasEditor({ DesignInfo }) {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Backspace' || event.key === 'Delete') {
-        const activeObject = canvas.getActiveObject();
-  
+        const activeObject = canvas?.getActiveObject();
+
         // Only delete if it's not in text editing mode
         if (activeObject && !activeObject.isEditing) {
           canvas.remove(activeObject);
@@ -57,7 +64,6 @@ function CanvasEditor({ DesignInfo }) {
         }
       }
     };
-  
 
     document.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -66,11 +72,11 @@ function CanvasEditor({ DesignInfo }) {
   }, [canvas]);
 
   return (
-    <div className='bg-secondary w-full h-screen'>
-       <TopNavbar />
-    <div className="mt-10 flex items-center justify-center flex-col">
-      <canvas id="canvas" ref={canvasRef} />
-    </div>
+    <div className="bg-secondary w-full h-screen">
+      <TopNavbar />
+      <div className="mt-10 flex items-center justify-center flex-col">
+        <canvas id="canvas" ref={canvasRef} />
+      </div>
     </div>
   );
 }

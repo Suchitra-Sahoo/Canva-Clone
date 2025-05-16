@@ -108,11 +108,7 @@ export const canvasSizeOptions=[
 ];
 
 export const sideBarMenu = [
-    {
-      name: 'Templates',
-      icon: LayoutTemplate,
-      desc: 'Browse and select from a variety of pre-designed templates.'
-    },
+    
     {
       name: 'Elements',
       icon: ShapesIcon,
