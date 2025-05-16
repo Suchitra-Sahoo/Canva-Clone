@@ -3,43 +3,71 @@ import { useCanvasHook } from '@/context/CanvasContext'
 import { api } from '@/convex/_generated/api'
 import { UserButton } from '@stackframe/stack'
 import { useMutation } from 'convex/react'
-import { Save } from 'lucide-react'
+import { Download, Save } from 'lucide-react'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import React from 'react'
 import { toast } from 'sonner'
 
-function DesignHeader({DesignInfo}) {
-  const {canvasEditor}=useCanvasHook();
-  const SaveDesign=useMutation(api.designs.SaveDesign);
-  const {designId}=useParams();
-  const onSave=async()=>{
-       if(canvasEditor){
-        const JsonDesign=canvasEditor.toJSON();
-        console.log(JsonDesign);
-        const result=await SaveDesign({
-          id: designId,
-          jsonDesign:JsonDesign
-        })
-        toast('Saved !')
-       }
+function DesignHeader({ DesignInfo }) {
+  const { canvasEditor } = useCanvasHook()
+  const SaveDesign = useMutation(api.designs.SaveDesign)
+  const { designId } = useParams()
+
+  const onSave = async () => {
+    if (canvasEditor) {
+      const JsonDesign = canvasEditor.toJSON()
+      console.log(JsonDesign)
+      const result = await SaveDesign({
+        id: designId,
+        jsonDesign: JsonDesign,
+      })
+      toast('Saved!')
+    }
   }
+
+  const onExport = () => {
+    try {
+      const dataUrl = canvasEditor?.toDataURL({
+        format: 'png',
+        quality: 1,
+      })
+      if (!dataUrl) throw new Error('No canvas data')
+
+      const link = document.createElement('a')
+      link.href = dataUrl
+      link.download = 'Design.png'
+      link.click()
+    } catch (error) {
+      toast.error(
+        'Export failed'
+      )
+      console.error('Export Error:', error)
+    }
+  }
+
   return (
-    <div className='p-3 flex justify-between
-    bg-gradient-to-r from-sky-500 via-blue-400 to-purple-600'>
-       <Image src={'/logo.png'} alt='logo' width={100} height={60} />
-       <input
-  placeholder='Design Name'
-  className='text-white border-none outline-none bg-transparent'
-  value={DesignInfo?.name ?? ''}
-  readOnly
-/>
+    <div
+      className="p-3 flex justify-between
+    bg-gradient-to-r from-sky-500 via-blue-400 to-purple-600"
+    >
+      <Image src={'/logo.png'} alt="logo" width={100} height={60} />
+      <input
+        placeholder="Design Name"
+        className="text-white border-none outline-none bg-transparent"
+        value={DesignInfo?.name ?? ''}
+        readOnly
+      />
 
-
-       <div className='flex gap-5 mt-2'>
-        <Button onClick={onSave}><Save/> Save</Button>
-       <UserButton />
-       </div>
+      <div className="flex gap-5 mt-2">
+        <Button onClick={onSave}>
+          <Save /> Save
+        </Button>
+        <Button onClick={onExport}>
+          <Download /> Export
+        </Button>
+        <UserButton />
+      </div>
     </div>
   )
 }

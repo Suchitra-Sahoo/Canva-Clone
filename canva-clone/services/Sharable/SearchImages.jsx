@@ -41,7 +41,12 @@ function SearchImages() {
   };
 
   const addImageToCanvas = async (imageUrl) => {
-    const canvasImageRef = await FabricImage.fromURL(imageUrl);
+    const canvasImageRef = await FabricImage.fromURL(imageUrl,
+      {
+          crossOrigin:'anonymous'
+       
+      }
+    );
     canvasEditor.add(canvasImageRef);
     canvasEditor.renderAll(); // fixed typo
   };
