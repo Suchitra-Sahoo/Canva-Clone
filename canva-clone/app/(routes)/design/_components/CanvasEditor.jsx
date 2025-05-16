@@ -29,7 +29,10 @@ function CanvasEditor({ DesignInfo }) {
     );
 
     initCanvas.setZoom(1 / scaleFactor);
-    initCanvas.renderAll();
+
+    initCanvas.loadFromJSON(DesignInfo.jsonTemplate,()=>{
+      initCanvas?.requestRenderAll();
+    })
 
     // Store canvas in local state and global context
     setCanvas(initCanvas);

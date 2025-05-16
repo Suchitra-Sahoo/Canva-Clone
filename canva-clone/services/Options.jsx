@@ -1,4 +1,4 @@
-import { Blend, BookType, Folder,Home, Image, Italic, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Text, Trash, WalletCardsIcon } from "lucide-react"
+import { Blend, BookType, Folder,Home, Image, Italic, LayoutDashboardIcon, LayoutTemplate, LayoutTemplateIcon, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Sticker, Text, Trash, WalletCardsIcon } from "lucide-react"
 import { Rocket } from "lucide-react";
 import BackgroundSetting from "./Components/BackgroundSetting";
 import AddImageSetting from "./Components/AddImageSetting";
@@ -14,6 +14,7 @@ import AITransformSetting from "./Components/AITransformSetting";
 import TextSettings from "./Components/TextSettings";
 import FontFamily from "./Sharable/FontFamily";
 import FontStyles from "./Sharable/FontStyles";
+
 
 export const WorkspaceMenu=[
     {
@@ -118,6 +119,7 @@ export const sideBarMenu = [
       desc: 'Add shapes, lines, icons, and other design elements.',
       component:<Elements />
     },
+    
     {
       name: 'Images',
       icon: Image,
@@ -142,6 +144,7 @@ export const sideBarMenu = [
       desc: 'Add background colors and gradients',
       component:<BackgroundSetting />
     },
+    
     {
       name: 'Settings',
       icon: Settings,
@@ -307,4 +310,6 @@ export const sideBarMenu = [
     'Nunito',
     'Poppins',
   ];
+  
+
   

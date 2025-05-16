@@ -27,3 +27,16 @@ export const GetDesign=query({
         return result;
     }
 })
+
+export const SaveDesign=mutation({
+    args:{
+        id:v.id('designs'),
+        jsonDesign:v.any()
+    },
+    handler:async(ctx,args)=>{
+        const result=await ctx.db.patch(args.id,{
+            jsonTemplate:args.jsonDesign
+        })
+        return result;
+    }
+})

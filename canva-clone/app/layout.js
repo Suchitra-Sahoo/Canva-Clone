@@ -3,6 +3,7 @@ import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "../stack";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
+import { Toaster } from 'sonner'; // ✅ Add this import
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,14 +23,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><StackProvider app={stackServerApp}><StackTheme>
-        <ConvexClientProvider>
-        {children}
-        </ConvexClientProvider>
-       
-      </StackTheme></StackProvider></body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <StackProvider app={stackServerApp}>
+          <StackTheme>
+            <ConvexClientProvider>
+              {children}
+              <Toaster /> {/* ✅ Add this line */}
+            </ConvexClientProvider>
+          </StackTheme>
+        </StackProvider>
+      </body>
     </html>
   );
 }
