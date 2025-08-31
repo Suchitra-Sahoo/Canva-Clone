@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://static.vecteezy.com/system/resources/previews/006/415/300/non_2x/painting-flat-illustration-with-someone-who-paints-using-easel-canvas-brushes-and-watercolor-for-poster-or-workshops-designs-vector.jpg" alt="Free Drawing Software Illustration" width="600"/>
+</p>
+
 # 🎨 Coffee and Canvas – Full Stack Design Collaboration Platform
 
 **Coffee and Canvas** is a real-time collaborative design editor inspired by Canva. It allows users to create, draw, and collaborate on designs seamlessly — all inside the browser. Whether it’s sketching ideas, editing images, or building creative layouts, Coffee and Canvas makes the process fast, fun, and intuitive.
